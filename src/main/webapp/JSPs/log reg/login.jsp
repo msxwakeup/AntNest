@@ -2,7 +2,7 @@
          pageEncoding="UTF-8"%>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
     <style type="text/css">
      *{
@@ -11,20 +11,20 @@
      }
         #wrap {
             height: 524px;
-            width: 100px;
+            width: 100%;
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
         }
         #head {
             height: 70px;
-            width: 100px;
+            width: 100%;
             background-color: #66CCCC;
             text-align: center;
             position: relative;
         }
         #foot {
-            width: 100px;
+            width: 100%;
             height: 126px;
             background-color: #CC9933;
             position: relative;
@@ -38,7 +38,7 @@
             left: 10%;
 
         }
-        .logC a button {
+        .input{
             width: 100%;
             height: 45px;
             background-color: #ee7700;
@@ -184,45 +184,47 @@
         <form  id="formLogin" action="login.do" method="post" >
             <span style="color: red">${error}</span>
         <div class="lgD">
-            <img src="img/logName.png" width="20" height="20" alt=""/>
-            <input type="text" name="aname" id="aname"
-                   placeholder="输入用户名" />
-        </div>
-        <div class="lgD">
-            <img src="img/logPwd.png" width="20" height="20" alt=""/>
-            <input type="text" name="apwd" id="apwd"
-                   placeholder="输入用户密码" />
-        </div>
-        <div class="logC">
-            <input name="submit" type="submit"  value="确定" /><br/>
+        类别:  <input type="radio" name="link" value="member" checked="checked"  required="required"/>用户
+              <input type="radio" name="link" value="admin"  />管理员<br/>
+            <!--   <img src="img/logName.png" width="20" height="20" alt=""/>-->
+              <input type="text" name="aname" id="aname"
+                     placeholder="输入用户名" />
+          </div>
+          <div class="lgD">
+              <!-- <img src="img/logPwd.png" width="20" height="20" alt=""/>-->
+              <input type="text" name="apwd" id="apwd"
+                     placeholder="输入用户密码" />
+          </div>
+          <div class="logC">
+              <input name="submit" type="submit"  value="确定" class="input" /><br/>
 
-            <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            还没有账号？<a href="#">注册</a>一个
-        </div>
-        </form>
-    </div>
-</div>
+              <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              还没有账号？<a href="#">注册</a>一个
+          </div>
+          </form>
+      </div>
+  </div>
 
-<div class="footer" id="foot">
-    <div class="copyright">
-        <p>Copyright © 2018</p>
-        <div class="img">
-            <i class="icon"></i><span></span>
-        </div>
+  <div class="footer" id="foot">
+      <div class="copyright">
+          <p>Copyright © 2018</p>
+          <div class="img">
+              <i class="icon"></i><span></span>
+          </div>
 
-        <div class="img">
-            <i class="icon1"></i><span></span>
-        </div>
+          <div class="img">
+              <i class="icon1"></i><span></span>
+          </div>
 
-        <div class="img">
-            <i class="icon2"></i><span>联系电话</span>
-        </div>
-
-
-    </div>
-
-</div>
+          <div class="img">
+              <i class="icon2"></i><span>联系电话</span>
+          </div>
 
 
-</body>
-</html>
+      </div>
+
+  </div>
+
+
+  </body>
+  </html>

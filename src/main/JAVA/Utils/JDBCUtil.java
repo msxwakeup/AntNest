@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class JDBCUtil {
     //连接数据库四要素
     private static String driverClassName="com.mysql.jdbc.Driver";
-    private static String url="jdbc:mysql:///ant121";
+    private static String url="jdbc:mysql:///ant";
     private static String username="root";
     private static String password="123456";
     static {      //当jdbc字节码被加载进JVM就立刻执行

@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 public class AdminDAOImpl implements IAdminDAO {
 
     public Adminer getAdmin(String admName, String admPwd) {
+
     String sql = "select name,pwd from adminer where NAME=? and pwd=?";
     Connection conn = null;
     PreparedStatement ps = null;
