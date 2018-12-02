@@ -3,11 +3,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <!-- <link href="/CSS&JS/style_checkcode.css" rel="stylesheet" type="text/css">-->
+    <script type="text/javascript" src="/AntNest/CSS&JS/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="/AntNest/CSS&JS/logincheckcode.js"></script>
     <title>Title</title>
     <style type="text/css">
      *{
             margin: 0;
             padding: 0;
+     }
+     a{
+         text-decoration: none;
+         outline: medium none;
+         color: #CF0;
      }
         #wrap {
             height: 524px;
@@ -38,18 +46,14 @@
             left: 10%;
 
         }
-        .input{
+        .inputo{
+            margin-top: 20px;
             width: 100%;
             height: 45px;
             background-color: #ee7700;
             border: none;
             color: white;
             font-size: 18px;
-        }
-        .logC a{
-            text-decoration: none;
-            outline: medium none;
-            color: #CF0;
         }
         .logC a:hover {
             color: #63B1FF;
@@ -59,13 +63,13 @@
         .logGet .logD.logDtip .p1 {
             display: inline-block;
             font-size: 28px;
-            margin-top: 30px;
+            margin-top: 10px;
             width: 86%;
         }
         #wrap .logGet .logD.logDtip {
             width: 86%;
             border-bottom: 1px solid #ee7700;
-            margin-bottom: 60px;
+            margin-bottom: 35px;
             margin-top: 0px;
             margin-right: auto;
             margin-left: auto;
@@ -84,7 +88,7 @@
             width: 86%;
             position: relative;
             margin-bottom: 30px;
-            margin-top: 30px;
+            margin-top: 10px;
             margin-right: auto;
             margin-left: auto;
         }
@@ -183,9 +187,10 @@
         <!-- 输入框 -->
         <form  id="formLogin" action="login.do" method="post" >
             <span style="color: red">${error}</span>
+         类别:  <input type="radio" name="link" value="member" checked="checked"  required="required"/>用户
+                <input type="radio" name="link" value="admin"  />管理员<br/>
         <div class="lgD">
-        类别:  <input type="radio" name="link" value="member" checked="checked"  required="required"/>用户
-              <input type="radio" name="link" value="admin"  />管理员<br/>
+
             <!--   <img src="img/logName.png" width="20" height="20" alt=""/>-->
               <input type="text" name="aname" id="aname"
                      placeholder="输入用户名" />
@@ -195,8 +200,19 @@
               <input type="text" name="apwd" id="apwd"
                      placeholder="输入用户密码" />
           </div>
+
+
+            验证码：
+            <input type="text" name="checkDigit" id="checkDigit" />
+            <img id="checkCode" class="refleshCheckCode" alt="点击更换验证码" src="imageServlet">
+
+            <a class="refleshCheckCode" href="imageServlet" >更换验证码</a>
+            <div id="checkDigitIsError" style="display: none;" >验证码错误！</div>
+
+
+
           <div class="logC">
-              <input name="submit" type="submit"  value="确定" class="input" /><br/>
+              <input name="submit" type="submit"  value="确定" class="inputo" /><br/>
 
               <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               还没有账号？<a href="#">注册</a>一个

@@ -1,4 +1,4 @@
-package Servlet;
+package Servlet.LogRegServlet;
 
 import DAO.IAdminDAO;
 import DAOImpl.AdminDAOImpl;

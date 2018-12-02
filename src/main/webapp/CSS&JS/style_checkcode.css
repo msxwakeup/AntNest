@@ -1,0 +1,65 @@
+/** body {
+   margin-left: 0px;
+   margin-top: 20px;
+   margin-right: 0px;
+   margin-bottom: 0px;
+} */
+
+tr{
+height:20px;
+}
+td{
+   font-size: 12px;	color: black;
+}
+
+table.table_main{
+
+border:1px solid gray ;
+margin:0 auto;
+width:630px;
+cellspacing:0px;
+cellpadding:8px;
+position:relative;
+
+}
+
+input{
+	font-family: "";
+	font-size: 11px;
+	color: #333333;
+	background-color:#F9EFF6;
+
+}
+input.password{
+	width:160px;
+}
+
+#checkDigit{
+   width:50px;
+}
+
+/** .btn_bg {
+   border:#436E9B thin 1px;
+   width:48px;
+   height:20px;padding:4px;
+   color:#000;
+
+} */
+
+.td_mes{
+width:230px;
+
+}
+
+div.name-pop{
+background-color:#EDEDEB;
+height:auto;
+width:200px;
+border: 1px red solid;
+display:none;
+padding-left:5px;
+padding-top:5px;
+padding-bottom: 5px;
+padding-right: 5px;
+
+}
