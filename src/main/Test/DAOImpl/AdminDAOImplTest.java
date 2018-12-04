@@ -20,7 +20,7 @@ public class AdminDAOImplTest {
     public void checkAdmin() {
         IAdminDAO adminDAO=new AdminDAOImpl();
         Adminer adminer=new Adminer();
-        boolean flag=adminDAO.CheckAdmin("zhangwei","123456");
+        boolean flag=adminDAO.CheckAdmin("xiong","123456");
         System.out.println(flag);
     }
 }

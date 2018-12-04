@@ -188,16 +188,16 @@
         <form  id="formLogin" action="login.do" method="post" >
             <span style="color: red">${error}</span>
          类别:  <input type="radio" name="link" value="member" checked="checked"  required="required"/>用户
-                <input type="radio" name="link" value="admin"  />管理员<br/>
+                <input type="radio" name="link" value="adminer"  />管理员<br/>
         <div class="lgD">
 
             <!--   <img src="img/logName.png" width="20" height="20" alt=""/>-->
-              <input type="text" name="aname" id="aname"
+              <input type="text" name="name" id="name"
                      placeholder="输入用户名" />
           </div>
           <div class="lgD">
               <!-- <img src="img/logPwd.png" width="20" height="20" alt=""/>-->
-              <input type="text" name="apwd" id="apwd"
+              <input type="text" name="pwd" id="pwd"
                      placeholder="输入用户密码" />
           </div>
 
