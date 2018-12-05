@@ -92,30 +92,36 @@ public class MemberDAOImpl implements IMemberDAO {
     }
 
     @Override
-    public Member getMember(String  memNo) throws Exception {
+    public Member getMember(String  memNo) {
+        String sql="select * from member where mem_no=?";
         Connection conn=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
+        Member member=new Member();
         try {
             conn=JDBCUtil.getConn();
-            String sql="select mem_id,mem_no,name,pwd FROM member where mem_no=?";
             ps=conn.prepareStatement(sql);
             ps.setString(1,memNo);
             rs=ps.executeQuery();
-
-            Member member=null;
             if(rs.next()){
-                member=new Member();
                 member.setMemId(rs.getInt(1));
                 member.setMemNO(rs.getString(2));
                 member.setmName(rs.getString(3));
-                member.setmPwd(rs.getString(4));
+                member.setmGender(rs.getString(4));
+                member.setmAge(rs.getInt(5));
+                member.setmPwd(rs.getString(6));
+                member.setmPhoto(rs.getString(7));
+                member.setmIntegral(rs.getInt(8));
+                return member;
             }
-            return member;
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtil.close(conn,ps,rs);
         }
-        finally {
-            JDBCUtil.close(conn, ps, rs);
-        }
+        return  null;
 
     }
 }
