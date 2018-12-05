@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <!-- <link href="/CSS&JS/style_checkcode.css" rel="stylesheet" type="text/css">-->
-    <script type="text/javascript" src="/AntNest/CSS&JS/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="/AntNest/CSS&JS/logincheckcode.js"></script>
+    <script type="text/javascript" src="js /jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="js/logincheckcode.js"></script>
     <title>Title</title>
     <style type="text/css">
      *{
@@ -215,7 +215,7 @@
               <input name="submit" type="submit"  value="确定" class="inputo" /><br/>
 
               <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              还没有账号？<a href="#">注册</a>一个
+              还没有账号？<a href="registe.jsp">注册</a>一个
           </div>
           </form>
       </div>

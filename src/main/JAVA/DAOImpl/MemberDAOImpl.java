@@ -23,7 +23,7 @@ public class MemberDAOImpl implements IMemberDAO {
             conn = JDBCUtil.getConn();
             String sql="insert into member(mem_no,name,pwd) values(?,?,?)";
             ps = conn.prepareStatement(sql);
-            ps.setInt(1,member.getMemNO());
+            ps.setString(1,member.getMemNO());
             ps.setString(2,member.getmName());
             ps.setString(3,member.getmPwd());
             int intflag=ps.executeUpdate();
@@ -92,7 +92,7 @@ public class MemberDAOImpl implements IMemberDAO {
     }
 
     @Override
-    public Member getMember(int  memNo) throws Exception {
+    public Member getMember(String  memNo) throws Exception {
         Connection conn=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
@@ -100,14 +100,14 @@ public class MemberDAOImpl implements IMemberDAO {
             conn=JDBCUtil.getConn();
             String sql="select mem_id,mem_no,name,pwd FROM member where mem_no=?";
             ps=conn.prepareStatement(sql);
-            ps.setInt(1,memNo);
+            ps.setString(1,memNo);
             rs=ps.executeQuery();
 
             Member member=null;
             if(rs.next()){
                 member=new Member();
                 member.setMemId(rs.getInt(1));
-                member.setMemNO(rs.getInt(2));
+                member.setMemNO(rs.getString(2));
                 member.setmName(rs.getString(3));
                 member.setmPwd(rs.getString(4));
             }

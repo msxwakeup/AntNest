@@ -27,26 +27,21 @@ public class RegServlet extends HttpServlet {
             request.getRequestDispatcher("regerror.jsp").forward(request, response);
             return;
         }
-        //两次密码是否匹配
-        if (!repwd.equals(pwd)) {
-            request.setAttribute("rename", "两次密码不一致");
-            request.getRequestDispatcher("regerror.jsp").forward(request, response);
-            return;
-        }
-        //判断号码是否规范
+
+
 
         IMemberDAO iMemberDAO = new MemberDAOImpl();
         Member member = new Member();
 
-        int imno = Integer.parseInt(mno);
-        member.setmName("name");
-        member.setmPwd("pwd");
-        member.setMemNO(imno);
+
+        member.setmName(name);
+        member.setmPwd(pwd);
+        member.setMemNO(mno);
         boolean flag = false;
         //查找会员号码是否已存在被注册过
         Member member1 = null;
         try {
-            member1 = iMemberDAO.getMember(imno);
+            member1 = iMemberDAO.getMember(mno);
         } catch (Exception e) {
             e.printStackTrace();
         }

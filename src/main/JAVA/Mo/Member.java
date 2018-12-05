@@ -2,7 +2,7 @@ package Mo;
 
 public class Member {
     private Integer memId;
-    private Integer memNO;
+    private String memNO;
     private  String mName;
     private String  mGender;
     private Integer mAge;
@@ -18,11 +18,11 @@ public class Member {
         this.memId = memId;
     }
 
-    public Integer getMemNO() {
+    public String getMemNO() {
         return memNO;
     }
 
-    public void setMemNO(Integer memNO) {
+    public void setMemNO(String memNO) {
         this.memNO = memNO;
     }
 

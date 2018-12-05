@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- <link href="/CSS&JS/style_checkcode.css" rel="stylesheet" type="text/css">-->
-    <script type="text/javascript" src="/AntNest/CSS&JS/jquery-1.8.2.js"></script>
-    <script type="text/javascript" src="/AntNest/CSS&JS/logincheckcode.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="js/logincheckcode.js"></script>
     <title>注册</title>
     <style type="text/css">
         *{
@@ -18,14 +18,14 @@
             color: #CF0;
         }
         #wrap {
-            height: 524px;
+            height: 80%;
             width: 100%;
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
         }
         #head {
-            height: 70px;
+            height: 10%;
             width: 100%;
             background-color: #66CCCC;
             text-align: center;
@@ -33,7 +33,7 @@
         }
         #foot {
             width: 100%;
-            height: 126px;
+            height: 10%;
             background-color: #CC9933;
             position: relative;
         }
@@ -170,6 +170,11 @@
             width: 100%;
         }
     </style>
+    <script src="js/check.js">
+
+
+    </script>
+
 </head>
 
 <body>
@@ -191,27 +196,34 @@
             <div class="lgD">
 
                 <!--   <img src="img/logName.png" width="20" height="20" alt=""/>-->
-                会员名:<input type="text" name="name" id="name"
-                       placeholder="输入会员名" />
+                会员名:<input type="text" name="name" id="name" onblur="checkUser()"
+                       placeholder="由英文开头和数字组成的4-16位字符" />
+
+            <div id="user_prompt"></div>
             </div>
             <div class="lgD">
                 <!-- <img src="img/logPwd.png" width="20" height="20" alt=""/>-->
-                输入密码:<input type="password" name="pwd" id="pwd"
-                       placeholder="输入密码" />
+                输入密码:<input type="password" name="pwd" id="pwd" onblur="checkPwd()"
+                       placeholder="由英文字母和数字组成的4-10位字符" />
+                <div id="pwd_prompt"></div>
             </div>
+
             <div class="lgD">
                 <!-- <img src="img/logPwd.png" width="20" height="20" alt=""/>-->
-                确认密码:<input type="password" name="repwd" id="repwd"
+                确认密码:<input type="password" name="repwd" id="repwd" onblur="checkRepwd()"
                        placeholder="确认密码" />
+
+            <div id="repwd_prompt"></div>
             </div>
             <div class="lgD">
                 <!-- <img src="img/logPwd.png" width="20" height="20" alt=""/>-->
-                电话号码:<input type="text" name="mno" id="mno"
-                       placeholder="输入电话号码" />
+                电话号码:<input type="text" name="mno" id="mno" onblur="checkMobile()"
+                       placeholder="输入正确电话号码" />
+                <div id="mobile_prompt"></div>
             </div>
 
             <div class="logC">
-                <input name="submit" type="submit"  value="提交" class="inputo" /><br/>
+                <input name="submit" type="submit"  value="提交" class="inputo" id="bot" /><br/>
 
 
             </div>
