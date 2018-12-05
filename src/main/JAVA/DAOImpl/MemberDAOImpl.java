@@ -3,6 +3,7 @@ package DAOImpl;
 import DAO.IMemberDAO;
 import Mo.Member;
 import Utils.JDBCUtil;
+import com.mysql.jdbc.JDBC4Connection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,21 +15,17 @@ public class MemberDAOImpl implements IMemberDAO {
     //添加用户
     public boolean addMember(Member member) {
         boolean flag=false;
-        String sql="insert member(mem_no,name,gender,age,pwd) value(?,?,?,?,?)";
-        Connection conn = null;
-        PreparedStatement ps = null;
-
         if(member==null) return flag;
 
+        Connection conn = null;
+        PreparedStatement ps = null;
         try {
             conn = JDBCUtil.getConn();
+            String sql="insert into member(mem_no,name,pwd) values(?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setInt(1,member.getMemNO());
             ps.setString(2,member.getmName());
-            ps.setString(3,member.getmGender());
-            ps.setInt(4,member.getmAge());
-            ps.setString(5,member.getmPwd());
-
+            ps.setString(3,member.getmPwd());
             int intflag=ps.executeUpdate();
             if(intflag==1)  flag=true;
             return flag;
@@ -92,5 +89,33 @@ public class MemberDAOImpl implements IMemberDAO {
         }
 
         return flag;
+    }
+
+    @Override
+    public Member getMember(int  memNo) throws Exception {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try {
+            conn=JDBCUtil.getConn();
+            String sql="select mem_id,mem_no,name,pwd FROM member where mem_no=?";
+            ps=conn.prepareStatement(sql);
+            ps.setInt(1,memNo);
+            rs=ps.executeQuery();
+
+            Member member=null;
+            if(rs.next()){
+                member=new Member();
+                member.setMemId(rs.getInt(1));
+                member.setMemNO(rs.getInt(2));
+                member.setmName(rs.getString(3));
+                member.setmPwd(rs.getString(4));
+            }
+            return member;
+        }
+        finally {
+            JDBCUtil.close(conn, ps, rs);
+        }
+
     }
 }
