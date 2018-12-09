@@ -11,6 +11,7 @@ import java.io.IOException;
 public class indexServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(req.getContextPath()+"login.jsp").forward(req,resp);
+        System.out.println("login:"+this.getServletConfig().getServletContext().getRealPath("/"));
+        req.getRequestDispatcher("login.jsp").forward(req,resp);
     }
 }

@@ -5,12 +5,14 @@ import DAO.IMemberDAO;
 import DAOImpl.AdminDAOImpl;
 import DAOImpl.MemberDAOImpl;
 import Mo.Adminer;
+import Mo.Member;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet( urlPatterns = "/login.do",name = "LoginServlet" )
@@ -27,6 +29,7 @@ public class LoginServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String get = req.getParameter("link");
         System.out.println(get);
+
         if ("member".equals(get)) {
             this.doMember(req, resp);
 
@@ -60,18 +63,19 @@ public class LoginServlet extends HttpServlet {
 
     }
     protected void doMember(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String mname = req.getParameter("name");
+        String mno = req.getParameter("name");
         String mpwd = req.getParameter("pwd");
-        System.out.println(mname);
-        System.out.println(mpwd);
         boolean flag1 = false;
-        flag1 = memberDAO.checkMember(mname, mpwd);
+        flag1 = memberDAO.checkMember(mno, mpwd);
         System.out.println(flag1);
         if (flag1) {
+            Member member=new Member();
+            member=memberDAO.getMember(mno);
+            req.getSession().setAttribute("member",member);
             System.out.println("用户登录成功");
         } else {
             System.out.println("用户登录失败");
-//            req.setAttribute("error","密码错误或该用户不存在");
+           req.setAttribute("error","密码错误或该用户不存在");
 //            req.getRequestDispatcher("/JSPs/log reg/login.jsp").forward(req,resp);
 //            return;
         }
