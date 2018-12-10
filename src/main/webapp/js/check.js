@@ -20,7 +20,7 @@ function checkUser(){
 
     if(reg.test(user)==false){
         userId.innerHTML="用户名不正确";
-        document.getElementByIdx("bot").disabled=true;
+        document.getElementById("bot").disabled=true;
         flag1=false;
 
     }  else
@@ -33,7 +33,7 @@ function checkUser(){
 function checkall() {
 
     if(flag1&&flag2&&flag3&&flag4)
-        document.getElementByIdx("bot").enabled=true;
+        document.getElementById("bot").disabled=false;
 
 
 }
@@ -46,6 +46,7 @@ function checkPwd(){
     var reg=/^[a-zA-Z0-9]{4,10}$/;
     if(reg.test(pwd)==false){
         pwdId.innerHTML="密码不能含有非法字符，长度在4-10之间";
+        document.getElementById("bot").disabled=true;
         flag2=false;
     }  else
 
@@ -62,7 +63,7 @@ function checkRepwd(){
     repwdId.innerHTML="";
     if(pwd!=repwd){
         repwdId.innerHTML="两次输入的密码不一致";
-
+        document.getElementById("bot").disabled=true;
         flag3=false;
     }
 
@@ -82,7 +83,7 @@ function checkMobile(){
     var regMobile=/^1\d{10}$/;
     if(regMobile.test(mobile)==false){
         mobileId.innerHTML="手机号码不正确，请重新输入";
-        document.getElementByIdx("bot").disabled=true;
+        document.getElementById("bot").disabled=true;
         flag4=false;
     }
     else

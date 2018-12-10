@@ -20,17 +20,17 @@
      a{
          text-decoration: none;
          outline: medium none;
-         color: #CF0;
+         color: #205bb1;
      }
         #wrap {
-            height: 524px;
+            height: 80%;
             width: 100%;
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
         }
         #head {
-            height: 70px;
+            height: 10%;
             width: 100%;
             background-color: #66CCCC;
             text-align: center;
@@ -38,7 +38,7 @@
         }
         #foot {
             width: 100%;
-            height: 126px;
+            height: 10%;
             background-color: #CC9933;
             position: relative;
         }
@@ -174,7 +174,18 @@
              height: 24px;
              width: 100%;
          }
+        #checkDigit{
+            width: 80px;
+            height: 20px;
+
+        }
 </style>
+    <script type="text/javascript">
+        function chgpic() {
+            var img = document.getElementById("checkDigit");
+            img.src = "imageServlet";			}
+    </script>
+
 </head>
 
 <body>
@@ -211,7 +222,7 @@
             <input type="text" name="checkDigit" id="checkDigit" />
             <img id="checkCode" class="refleshCheckCode" alt="点击更换验证码" src="imageServlet">
 
-            <a class="refleshCheckCode" href="imageServlet" >更换验证码</a>
+            <a href="#" onmouseover="chgpic()" >看不清？换一张</a>
             <div id="checkDigitIsError" style="display: none;" >验证码错误！</div>
 
 
