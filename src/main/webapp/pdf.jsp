@@ -18,19 +18,19 @@
     <title>Title</title>
 </head>
 <body>
-<a href="http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>/pdfStreamHandeler.do"target="myframe">pdf1</a>
+<a href="http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>/pdfStreamHandeler.do" target="myframe">数据结构c语言版</a>
 
 
 <%--<iframe id="displayPdfIframe" width="100%" height="800"
-        src="<c:url value="pdf/web/viewer.html" />?file=<%=basePath%>/pdfStreamHandeler.do">--%>
-    <%--
-    </iframe>
-    <iframe id="displayPdfIframe" width="100%" height="800"
+        src="<c:url value="pdf/web/viewer.html" />?file=<%=basePath%>/pdfStreamHandeler.do">
 
-            src="<c:url value="pdf/web/viewer.html" />?file=<c:url value="/helloworld.pdf"/>">
+    </iframe> --%>
+    <iframe name="myframe" width="50%" height="800">
+
+            <%--src="<c:url value="pdf/web/viewer.html" />?file=<c:url value="/helloworld.pdf"/>">--%>
 
     </iframe>
-    --%>
+
 </body>
 
 </html>

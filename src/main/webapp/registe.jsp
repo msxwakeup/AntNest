@@ -20,7 +20,7 @@
         a{
             text-decoration: none;
             outline: medium none;
-            color: #CF0;
+            color: #2558ff;
         }
         #wrap {
             height: 80%;
@@ -74,7 +74,7 @@
         #wrap .logGet .logD.logDtip {
             width: 86%;
             border-bottom: 1px solid #ee7700;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             margin-top: 0px;
             margin-right: auto;
             margin-left: auto;
@@ -92,7 +92,7 @@
         #wrap .logGet .lgD {
             width: 86%;
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             margin-top: 10px;
             margin-right: auto;
             margin-left: auto;

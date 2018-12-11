@@ -14,19 +14,16 @@ import java.io.IOException;
 @WebServlet(name = "pdfServlet",urlPatterns = "/pdfStreamHandeler.do")
 public class pdfServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
 
-    }
+        String fileName=request.getParameter("name");
 
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String fileName = "F:/material/[数据结构(C语言版)].严蔚敏_吴伟民.扫描版.pdf";
+        String fileLink = "C:/material/[数据结构(C语言版)].严蔚敏_吴伟民.扫描版.pdf";
 //服务端把response的header头中设置Access-Control-Allow-Origin为制定可请求当前域名下数据的域名
         response.setHeader("Access-Control-Allow-Origin", "*"); // 解决请求头跨域问题
 
         response.setContentType("application/pdf");
 
-        File f1 = new File(fileName);
+        File f1 = new File(fileLink);
 
         FileInputStream reader= new FileInputStream(f1);
 
@@ -52,6 +49,13 @@ public class pdfServlet extends HttpServlet {
 
         reader.close();
 
+
+    }
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        doPost(request,response);
     }
 
 
