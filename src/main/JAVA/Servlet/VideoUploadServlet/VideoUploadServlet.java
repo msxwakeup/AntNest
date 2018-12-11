@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet(name = "VideoUploadServlet",urlPatterns = "/uploadvideo.do")
 public class VideoUploadServlet extends HttpServlet {
@@ -24,19 +26,22 @@ public class VideoUploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         HttpSession session=req.getSession();
-        String videoname=req.getParameter("videoname");
-        String knowledge=req.getParameter("knowledge");
         UploadUtil uploadUtil=new UploadUtil(this,req);
+
+        String videoname=uploadUtil.processFormField("videoname");
+        String knowledge=uploadUtil.processFormField("knowledge");
         String newname="";
-        System.out.println("1111:"+this.getServletConfig().getServletContext().getContextPath());
         try {
+
             newname=uploadUtil.processUploadedFile("video","videos");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(newname);
         Video video=new Video();
+        SimpleDateFormat time= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        System.out.println(time.format(new Date()));// new Date()为获取当前系统时间
         video.setVideoName(videoname);
+        video.setUpTime(time.format(new Date()));
         video.setvLink("videos/"+newname);
         video.setKnowledge(knowledge);
         boolean flag=false;

@@ -9,8 +9,10 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 public class UploadUtil {
 	private static List<FileItem> items;
@@ -52,12 +54,35 @@ public class UploadUtil {
 
 				//不区分大小写
 				if (name.equalsIgnoreCase(fieldname)) {
-					value = item.getString();
-				}
+                    try {
+                        value = item.getString("UTF-8");
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
 			}
 		}
 		return value;
 	}
+
+	public boolean checkfile(String fieldname,String allowExtensions) {
+		Iterator<FileItem> iter = items.iterator();
+		String file = "";
+		while (iter.hasNext()) {
+			FileItem item = iter.next();
+			if (!item.isFormField()) {
+				String fieldName = item.getFieldName();
+				if (fieldName.equalsIgnoreCase(fieldname)) {
+					file = item.getName();
+					file.split(".");
+				}
+			}
+
+
+		}
+		return true;
+	}
+
       //处理文件域的东西
 	public String processUploadedFile(String fieldname, String path)throws Exception  {
 		File uploadedfile = null;
@@ -67,9 +92,10 @@ public class UploadUtil {
 			FileItem item = iter.next();
 			if (!item.isFormField()) {
 				String fieldName = item.getFieldName();
+
 				if (fieldName.equalsIgnoreCase(fieldname)) {
 					fileName = item.getName();
-					fileName = System.currentTimeMillis()
+					fileName = UUID.randomUUID().toString()
 							+ fileName.substring(fileName.lastIndexOf("."), fileName.length());// rename
 																								// filename
 					uploadedfile = new File(basepath + path + "/" + fileName);
