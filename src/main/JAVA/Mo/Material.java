@@ -5,6 +5,10 @@ public class Material {
     String name;
     String content;
     String knowledge;
+
+
+
+
     String link;
     public int getM_id() {
         return m_id;

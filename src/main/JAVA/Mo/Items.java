@@ -14,6 +14,20 @@ public class Items {
     private String knowledge;
     private  String itStatus;
 
+    public String toString() {
+        return "Items{" +
+                "answer='" + answer + '\'' +
+                ", catagroy='" + catagroy + '\'' +
+                ", itContent='" + itContent + '\'' +
+                ", A='" + A + '\'' +
+                ", B='" + B + '\'' +
+                ", C='" + C + '\'' +
+                ", D='" + D + '\'' +
+                ", analyse='" + analyse + '\'' +
+                ", knowledge='" + knowledge + '\'' +
+                '}';
+    }
+
     public Integer getItId() {
         return itId;
     }

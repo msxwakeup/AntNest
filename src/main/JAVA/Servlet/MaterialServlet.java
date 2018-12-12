@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,19 +17,19 @@ import java.util.List;
 @WebServlet(name = "MaterialServlet",urlPatterns = "/material.do")
 public class MaterialServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         String l="算";
+
+         String str=request.getParameter("str");
         IMaterialDAO materialDAO=new MaterialDAOImpl();
         List<Material> list=null;
         try {
-            list=materialDAO.getMaterial(l);
+            list=materialDAO.getMaterial(str);
 
         }catch (SQLException e)
         {
             e.printStackTrace();
         }
-
-        request.setAttribute("mlist",list);
-        request.getRequestDispatcher("show.jsp").forward(request,response);
+       request.setAttribute("mlist",list);
+       request.getRequestDispatcher("show.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

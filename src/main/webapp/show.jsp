@@ -17,19 +17,52 @@
 <head>
     <base href="<%=basePath%>"/>
     <title>Title</title>
+    <script src="js/jquery-1.8.2.js"></script>
 </head>
+<script >
+    $(document).ready(function() {
+        $(".lookfor").click(function() {
+//alert($(this).attr("materialLink"));
+
+            $.get("<%=basePath%>setLink.do",{mlink:$(this).attr("materialLink")} ,function(result){
+                //alert(result);
+            });
+
+            $("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
+
+
+        });
+    });
+
+</script>
 <body>
 bbbbb
-<table>
+
 
 <c:forEach var="material" items="${mlist}">
-    <tr>
-    <td>${material.name}</td>
-    <td>${material.knowledge}</td>
-    <td>${material.link}</td>
-    </tr>
+    <ul>
+
+        <li>
+
+
+            <a class="lookfor"  materialLink="${material.link}"   href="javaScript:;"    target="myframe" >${material.name}</a>
+        </li>
+        <li>${material.knowledge}</li>
+        <li>${material.link}</li>
+    </ul>
 </c:forEach>
 
-</table>
+
+
+<%--<iframe id="displayPdfIframe" width="100%" height="800"
+        src="<c:url value="pdf/web/viewer.html" />?file=<%=basePath%>/pdfStreamHandeler.do">
+
+    </iframe> --%>
+<iframe id="myframe" name="myframe" width="50%" height="800">
+
+    <%--src="<c:url value="pdf/web/viewer.html" />?file=<c:url value="/helloworld.pdf"/>">--%>
+
+</iframe>
+
 </body>
 </html>

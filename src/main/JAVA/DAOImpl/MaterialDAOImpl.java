@@ -17,21 +17,22 @@ public class MaterialDAOImpl implements IMaterialDAO {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try {
-            String sql="select m_name,knowledge,link FROM material where m_name like ? ";
+            String sql="select m_id, m_name,knowledge,link FROM material where m_name like ? ";
            // String sql="select name12,knowledge,link FROM material where name12 like "+names+"";
 
             conn=JDBCUtil.getConn();
             ps=conn.prepareStatement(sql);
-            System.out.println(sql);
+
              ps.setString(1,"%"+names+"%");
             rs=ps.executeQuery();
 
             while (rs.next()){
 
                 Material material=new Material();
-                material.setName(rs.getString(1));
-                material.setKnowledge(rs.getString(2));
-                material.setLink(rs.getString(3));
+                material.setM_id(rs.getInt(1));
+                material.setName(rs.getString(2));
+                material.setKnowledge(rs.getString(3));
+                material.setLink(rs.getString(4));
                 materialList.add(material);
 
             }
@@ -44,15 +45,15 @@ public class MaterialDAOImpl implements IMaterialDAO {
     }
 
     @Override
-    public Material getMaterials(String knowledge) throws SQLException {
+    public Material getMaterials(int id) throws SQLException {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            String sql = "select link FROM material where knowledge like \"%\"?\"%\"";
+            String sql = "select link FROM material where m_id=?";
             conn = JDBCUtil.getConn();
             ps = conn.prepareStatement(sql);
-            ps.setString(1, knowledge);
+            ps.setInt(1,id);
             rs = ps.executeQuery();
             Material material = null;
             while (rs.next()) {

@@ -18,7 +18,7 @@
     <title>Title</title>
 </head>
 <body>
-<a href="http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>/pdfStreamHandeler.do" target="myframe">数据结构c语言版</a>
+<a href="http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do" target="myframe">数据结构c语言版</a>
 
 
 <%--<iframe id="displayPdfIframe" width="100%" height="800"
