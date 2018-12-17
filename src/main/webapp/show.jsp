@@ -18,11 +18,28 @@
     <base href="<%=basePath%>"/>
     <title>Title</title>
     <script src="js/jquery-1.8.2.js"></script>
+    <style>
+        *{margin: 0;padding: 0;}
+        #fl{
+            width: 30%;
+            height: 80%;
+            float: left;
+        }
+        #fd{
+            width: 70%;
+            height: 80%;
+            float: left;
+        }
+    </style>
 </head>
 <script >
     $(document).ready(function() {
+
+
         $(".lookfor").click(function() {
-//alert($(this).attr("materialLink"));
+
+
+alert($(this).attr("materialLink"));
 
             $.get("<%=basePath%>setLink.do",{mlink:$(this).attr("materialLink")} ,function(result){
                 //alert(result);
@@ -38,19 +55,20 @@
 <body>
 bbbbb
 
+<div id="fl">
 
-<c:forEach var="material" items="${mlist}">
-    <ul>
-
+    <ul id="booklist" >
+        <c:forEach var="material" items="${mlist}">
         <li>
 
 
             <a class="lookfor"  materialLink="${material.link}"   href="javaScript:;"    target="myframe" >${material.name}</a>
+
+                ${material.knowledge}
         </li>
-        <li>${material.knowledge}</li>
-        <li>${material.link}</li>
+        </c:forEach>
     </ul>
-</c:forEach>
+</div>
 
 
 
@@ -58,11 +76,27 @@ bbbbb
         src="<c:url value="pdf/web/viewer.html" />?file=<%=basePath%>/pdfStreamHandeler.do">
 
     </iframe> --%>
-<iframe id="myframe" name="myframe" width="50%" height="800">
+<div id="fd">
+<iframe id="myframe" name="myframe" width="100%" height="100%">
 
     <%--src="<c:url value="pdf/web/viewer.html" />?file=<c:url value="/helloworld.pdf"/>">--%>
 
 </iframe>
+</div>
+<script >
+$(document).ready(function() {
 
+
+    $("li:eq(1) ").css("background-color","#B2E0FF");
+
+    alert( $("li:eq(1) a").attr("materiallink"));
+
+$.get("<%=basePath%>setLink.do",{mlink:$("#booklist li:eq(0) a").attr("materialLink")} ,function(result){
+//alert(result);
+});
+
+$("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
+});
+</script>
 </body>
 </html>
