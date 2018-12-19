@@ -68,7 +68,7 @@
             <a class="lookfor"  materialLink="${material.link}"   href="javaScript:;"    target="myframe" >${material.name}</a>
 
                 ${material.knowledge}
-                ${material.link}
+
         </li>
         </c:forEach>
     </ul>

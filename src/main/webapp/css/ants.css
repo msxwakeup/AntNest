@@ -1,0 +1,567 @@
+body, ul, li, input {
+    border: 0 none;
+    margin: 0 auto;
+    padding: 0;}
+body {
+    font-family: '新宋体' , '宋体' ,Verdana;
+    background: #F4F4F4;
+    overflow-y: scroll;
+    overflow-x: hidden;}
+a {
+    text-decoration: none;  }
+
+/*header导航相关*/
+.header {
+    background: none;
+    height: 80px;
+    line-height: 90px;
+    background-color: #2E333F;
+}
+.nav_c {
+    width: 900px;
+    margin: 0px auto 0; }
+.logo{
+    height: 80px;
+    width: 200px;
+    background-color: #B21F2D;
+    position: relative;
+    left: -220px;
+    clear: left;}
+.navc {
+    top: 20px;
+    margin:-165px;
+    width:280px;
+    height:80px;
+    position: relative;
+    right:-1110px;
+    font-size: 16px;
+    color: #000;}
+.navc img{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 130px;
+    bottom: 75px;
+    border-radius: 50%;
+}
+.nav {
+    width: auto;
+    height: 100px;
+    position: absolute;
+    top: 0px;}
+.nav ul li {
+    display: inline-block;
+    line-height: 60px;
+    height: 77px;
+    width: 106px;
+    text-align: center;
+    margin: 0 2px; }
+.nav ul li a ,.navc a{
+    font-size: 24px;
+    color: #EEEEEE;
+    text-shadow: 1px 1px 1px #000000;
+    font-family: Verdana; }
+.nav ul li a:hover ,.navc a:hover{
+    color: #C8CBCF;
+    text-shadow: 1px 1px 1px #000000; }
+.nav ul li span {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 1px 1px 0 #000000;
+    height: 14px;
+    margin: 24px -8px 0 0;
+    overflow: hidden;
+    vertical-align: top;
+    width: 1px;
+    float: right; }
+div.search {padding: 30px 0;}
+.searchform{
+    position: relative;
+    top: 45px;
+    width: 300px;
+    margin:-135px;
+    height: 80px;
+    right:-750px;}
+.bar input {
+    width: 100%;
+    height: 42px;
+    padding-left: 13px;
+    border: 1px solid #54C15A;
+    border-radius: 5px;
+    border: 5px;
+    background:#EEEEEE;
+    color: #9E9C9C;}
+.bar button {
+    top: 0px;
+    right: 0px;
+    height: 42px;
+    width: 42px;
+    border: none;
+    font-family: "宋体";
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    background: #54C15A;
+    border-radius: 0 5px 5px 0;
+    clear: both;}
+.navc span{
+    font-size: 20px;
+    font-weight: bold;
+    color: lightgrey;
+}
+/*index_content部分样式*/
+#flash{
+    width:1200px;
+    height:450px;
+    border:1px solid white;
+    margin: 20px auto;
+    position:relative;
+}
+#flash img{
+    display: none;
+    position:absolute;
+    left:0;
+    top:0;
+}
+#flash ul{
+    position:absolute;
+    left:1000px;
+    bottom:30px;
+
+}
+#flash ul li{
+    list-style:none;
+    width:20px;
+    height:20px;
+    background:#DDDDDD;
+    float:left;
+    border-radius:50%;
+    margin-right:8px;
+}
+#video,#reward{
+    width: 1200px;
+    height: auto;
+    margin: 50px auto;
+    overflow: hidden;
+}
+.title{
+    width: 1200px;
+    height: 50px;
+    font-family: '宋体';
+    font-weight: bold;
+    font-size: 36px;
+    padding-bottom: 10px;
+}
+.video_content{
+    width: 1200px;
+    overflow: hidden;
+}
+.video1{
+    width: 270px;
+    height: 200px;
+    float: left;
+    cursor: pointer;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+.video2{
+    width: 270px;
+    height: 200px;
+    float: right;
+    cursor: pointer;
+    margin-bottom: 30px;
+    background-color: white;
+}
+.reward_content{
+    width: 1200px;
+    height: 600px;
+    overflow: hidden;
+}
+.reward1{
+    width: 370px;
+    height: 150px;
+    float: left;
+    cursor: pointer;
+    margin-right: 45px;
+    margin-bottom: 30px;
+}
+.reward2{
+    width: 370px;
+    height: 150px;
+    float: right;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.image{
+    width: 270px;
+    height: 150px;
+    border: white solid 1px;
+    overflow: hidden;
+}
+.head_img{
+    height:150px ;
+    width: 100px;
+    float: left;
+}
+.head_img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.image a img{
+    width: 270px;
+    height: 150px;
+    transition: all 0.6s;/* transition: all 0.6s; 是变化速度，数值越小速度越快 */
+}
+.image img:hover{
+    transform: scale(1.4);/* transform: scale(1.4); 是变化范围，  scale(1.4) 是放大1.4倍的意思 */
+}
+.video_title{
+    text-align: center;
+    padding-top: 10px;
+}
+.reward_title{
+    height: 150px;
+    width: 270px;
+    float: left;
+    padding-top: 10px;
+    color: black;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+.username{
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+}
+.describle{
+    height: 80px;
+    width: 200px;
+    margin-left: 10px;
+}
+.video_title a,.reward_title a{
+    text-decoration: none;
+    color: black;
+
+}
+
+/*index_footer部分的css样式*/
+.footer{
+    height: 100px;
+    text-align: center;
+    background-color:  #2E333F;}
+.information a {
+    text-decoration: none;
+    outline: medium none;
+    color:#EEEEEE;
+    height: 50px;
+    width: 100px;
+    line-height: 50px;
+    padding: 10px;
+    font-size: 24px;
+    font-family: '宋体';}
+.copyright{
+    color:#EEEEEE;
+    font-size: 24px;
+}
+
+/*video_content部分的css样式*/
+.video_list{
+    width: 1200px;
+    height: auto;
+    margin: 50px auto;
+    overflow: hidden;
+}
+.list1{
+    height: 50px;
+    width: 1200px;
+    background-color:white;
+}
+.list1 ul{
+    list-style-type: none;}
+.list1 ul li{
+    height: 50px;
+    width: 80px;
+    line-height: 50px;
+    float: left;
+    text-align: center;}
+.list1 ul li a{
+    color: gray;
+    cursor: pointer;
+}
+.list1 ul li a:hover{
+    color: lightgreen;
+}
+.list2{   /* 相当于index_content中的id选择器video */
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+.pagination ul li {display: inline;}
+.pagination ul li a {
+    color: black;
+    float: left;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    font-size: 20px;
+}
+.active{
+    background-color: grey;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+/*resource_content部分的css样式*/
+.resource{
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+}
+.resource_top{
+    width: 100%;
+    height: 240px;
+    color:oldlace;
+    font-family: verdana;
+    font-size: 20px;
+    background-image:url("../img/background.PNG");
+    background-repeat:no-repeat;
+}
+.resource_nav{
+    width: 100%;
+    height: 200px;
+    background-color: #0069D9;
+    margin-top: 20px;
+}
+.resource_content{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid #e4e4e4;
+    background-color: white;
+}
+.resource_item{
+    height: 40px;
+    margin:16px 30px 0px 30px;
+    border-bottom:1px lightgray solid;
+}
+.resource_item a{
+    text-decoration: none;
+    font-family: '微软雅黑';
+    font-size: 16px;
+    color:grey;
+}
+.resource span{
+    font-family: '微软雅黑';
+    font-size: 16px;
+    color:grey;
+}
+.item_file{
+    height: 40px;
+    width: 700px;
+    line-height: 40px;
+    float: left;
+    margin-right: 100px;
+}
+.page_view,.update_date{
+    height: 40px;
+    width: 160px;
+    line-height: 40px;
+    float: left;
+}
+.resource_list{
+    width: 100%;
+    height: auto;
+}
+.resource_list ul{
+    list-style: none;
+    width: 1150px;
+    margin: 0 auto;
+    padding:0px;
+}
+.list_box{
+    height: 100px;
+    border-bottom:1px lightgray dotted ;
+}
+
+.pdf_img{
+    height: 100px;
+    width: 100px;
+    float: left;
+    text-align: center;
+}
+.pdf_img img{
+    margin-top: 15px;
+    height: 70px;
+    width: 70px;
+}
+.file_title{
+    height: 50px;
+    width: 600px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 100px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.file_title a{
+    text-decoration: none;
+    color: #000000;
+    font-family:verdana;
+    font-size: 20px;
+}
+.file_title a:hover{
+    text-decoration: underline;
+}
+.page_view_num,.update_date_num{
+    height: 60px;
+    width: 160px;
+    float: left;
+    margin-top: 20px;
+}
+.list_box span{
+    margin-left: 13px;
+}
+.pagination1 {
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 20px;
+}
+.pagination1 ul li{
+    display: inline;
+    margin-top: 20px;
+}
+.pagination1 ul li a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    font-size: 20px;
+}
+
+/*修改基本信息的css样式*/
+.setting{
+    width: 1200px;
+    height: auto;
+    margin: 50px auto;
+    overflow: hidden;
+}
+.baseTitle{
+    height: 50px;
+    width: 1200px;
+    line-height: 50px;
+    color: gray;
+    padding-left: 50px;
+    font-size: 20px;
+    background-color:white;
+}
+.changeInformation{
+    height: auto;
+    width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+}
+.settingLeft{
+    height: 500px;
+    width: 200px;
+    float: left;
+    background-color: #DAE0E5;
+}
+.headImg{
+    width: 200px;
+    height:	100px ;
+    padding-top: 20px;
+    text-align: center;
+}
+.headImg img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.settingList{
+    height: 450px;
+    width: 200px;
+    padding-left: 45px;
+}
+.settingLeft ul{
+    list-style-type: none;
+}
+.settingLeft ul li{
+    line-height:50px ;
+    padding-left: 10px;
+    /*font-family: '微软雅黑';*/
+    font-family: '新宋体' , '宋体' , Verdana;
+    color:gray;
+    font-size: 20px;
+    cursor: pointer;
+}
+.settingRight{
+    height: 500px;
+    width: 1000px;
+    float: right;
+    text-align: center;
+    background: white;
+}
+.changeInfo{
+    height: 500px;
+    width: 1000px;
+}
+.changeHeadImg{
+    height:300px ;
+    width:200px ;
+    margin: 50px 400px;
+    text-align: center;
+}
+.formInfo{
+    height: 300px;
+    width: 400px;
+    margin:50px auto;
+    font-size: 20px;
+    font-weight:bold;
+}
+.input1{
+    width: 200px;
+    height: 25px;
+    border: 1px solid gray;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 50px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.wrap{
+    padding:5px 0;
+    margin:10px 0;
+}
+.tip{
+    width:40%;
+    padding-right:20px;
+    /*控制对齐方式*/
+    float:left;
+    text-align: right;
+}

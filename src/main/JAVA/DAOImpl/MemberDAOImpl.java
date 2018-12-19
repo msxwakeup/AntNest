@@ -5,10 +5,7 @@ import Mo.Member;
 import Utils.JDBCUtil;
 import com.mysql.jdbc.JDBC4Connection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MemberDAOImpl implements IMemberDAO {
 
@@ -123,5 +120,50 @@ public class MemberDAOImpl implements IMemberDAO {
         }
         return  null;
 
+    }
+
+    //修改用户的昵称，年龄，性别
+    public boolean updateMemberInformation(String mName,Integer mAge,String mGender,String memNo) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        boolean flag=false;
+        String sql = "UPDATE member set name=?,age=?,gender=? where mem_no=?";
+        try {
+            conn = JDBCUtil.getConn();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, mName);
+            ps.setInt(2,mAge);
+            ps.setString(3, mGender);
+            ps.setString(4, memNo);
+
+            int intflag=ps.executeUpdate();
+            if(intflag==1)  flag=true;
+
+            return flag;
+        } finally {
+            JDBCUtil.close(conn, ps, null);
+        }
+    }
+
+    //更新头像
+    public boolean updateMemberHeadImg(Member member) throws SQLException{
+        boolean flag = false;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = JDBCUtil.getConn();
+            String sql = "update member\n" +
+                    "set photo=?\n" +
+                    "where mem_no=?";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,member.getmPhoto());
+            ps.setString(2,member.getMemNO());
+            int intflag = ps.executeUpdate();
+            if (intflag == 1)
+                flag = true;
+            return  flag;
+        } finally {
+            JDBCUtil.close(conn,ps,null);
+        }
     }
 }
