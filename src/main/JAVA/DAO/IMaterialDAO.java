@@ -15,4 +15,5 @@ public interface IMaterialDAO {
     public List<Material> getSeries(String knowledge)throws SQLException;
     //按类型显示系列
     //public List<Material> getshow(int id )throws SQLException;
+    public  List<Material> getshow(String name,int start,int size)throws SQLException;
 }

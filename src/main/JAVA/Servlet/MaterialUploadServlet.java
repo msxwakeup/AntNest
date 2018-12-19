@@ -3,7 +3,7 @@ package Servlet;
 import DAO.IMaterialDAO;
 import DAOImpl.MaterialDAOImpl;
 import Mo.Material;
-import Utils.UploadMaterial;
+import Utils.UploadUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +26,7 @@ public class MaterialUploadServlet extends HttpServlet {
         HttpSession session=req.getSession();
         String name=req.getParameter("name");
         String knowledge=req.getParameter("knowledge");
-        UploadMaterial uploadUtil=new UploadMaterial(this,req);
+        UploadUtil uploadUtil=new UploadUtil(this,req);
         String newname="";
         System.out.println("1111:"+this.getServletConfig().getServletContext().getContextPath());
         try {
