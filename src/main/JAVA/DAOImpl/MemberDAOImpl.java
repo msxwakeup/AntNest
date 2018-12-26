@@ -88,19 +88,20 @@ public class MemberDAOImpl implements IMemberDAO {
         return flag;
     }
 
-    @Override
+
     public Member getMember(String  memNo) {
         String sql="select * from member where mem_no=?";
         Connection conn=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
-        Member member=new Member();
+        Member member=null;
         try {
             conn=JDBCUtil.getConn();
             ps=conn.prepareStatement(sql);
             ps.setString(1,memNo);
             rs=ps.executeQuery();
             if(rs.next()){
+                member=new Member();
                 member.setMemId(rs.getInt(1));
                 member.setMemNO(rs.getString(2));
                 member.setmName(rs.getString(3));
@@ -109,7 +110,7 @@ public class MemberDAOImpl implements IMemberDAO {
                 member.setmPwd(rs.getString(6));
                 member.setmPhoto(rs.getString(7));
                 member.setmIntegral(rs.getInt(8));
-                return member;
+
             }
 
 
@@ -118,7 +119,7 @@ public class MemberDAOImpl implements IMemberDAO {
         }finally {
             JDBCUtil.close(conn,ps,rs);
         }
-        return  null;
+        return  member; //如果等于null；不存在用户
 
     }
 

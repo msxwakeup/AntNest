@@ -12,7 +12,7 @@
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
-
+<%@page import="Mo.Material" %>
 <html>
 <head>
     <base href="<%=basePath%>"/>
@@ -39,7 +39,7 @@
         $(".lookfor").click(function() {
 
 
-//alert($(this).attr("materialLink"));
+alert($(this).attr("materialLink"));
 
             $.get("<%=basePath%>setLink.do",{mlink:$(this).attr("materialLink")} ,function(result){
                 //alert(result);
@@ -53,43 +53,21 @@
 
 </script>
 <body>
-<form action="materialpage.do" method="get">
-    <input type="text" id="str" name="names"  value="${key}">
-    <input name="submit" type="submit"  value="确定" />
-</form>
+bbbbb
 
 <div id="fl">
 
     <ul id="booklist" >
-        <c:forEach var="material" items="${pagebean.pageList}" >
+        <c:forEach var="material" items="${mlist}">
         <li>
 
 
             <a class="lookfor"  materialLink="${material.link}"   href="javaScript:;"    target="myframe" >${material.name}</a>
 
                 ${material.knowledge}
-
         </li>
         </c:forEach>
     </ul>
-    <div>
-        <span class="first">当前页数：[${pagebean.currentPage}/${pagebean.totalPages}] </span>
-
-
-        <c:if test="${pagebean.firstPage==true}">
-            <a >首页 </a>
-            <a >上一页 </a>
-        </c:if>
-
-        <c:if test="${pagebean.firstPage==false}">
-            <a href="materialpage.do?currentPage=1&names=${key}" class="first">首页 </a>
-            <a href="materialpage.do?currentPage=${pagebean.previousPageCount}&names=${key}">上一页 </a>
-        </c:if>
-
-        <a href="materialpage.do?currentPage=${pagebean.nextPageCount}&names=${key}">下一页 </a>
-        <a href="materialpage.do?currentPage=${pagebean.totalPages}&names=${key}">尾页 </a>
-
-    </div>
 </div>
 
 
@@ -106,19 +84,19 @@
 </iframe>
 </div>
 <script >
-    $(document).ready(function() {
+$(document).ready(function() {
 
 
-        //$("li:eq(1) ").css("background-color","#B2E0FF");
+    $("li:eq(1) ").css("background-color","#B2E0FF");
 
-        //alert( $("li:eq(1) a").attr("materiallink"));
+    alert( $("li:eq(1) a").attr("materiallink"));
 
-        $.get("<%=basePath%>setLink.do",{mlink:$("#booklist li:eq(0) a").attr("materialLink")} ,function(result){
+$.get("<%=basePath%>setLink.do",{mlink:$("#booklist li:eq(0) a").attr("materialLink")} ,function(result){
 //alert(result);
-        });
+});
 
-        $("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
-    });
+$("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
+});
 </script>
 </body>
 </html>

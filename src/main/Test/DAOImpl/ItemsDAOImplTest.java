@@ -13,10 +13,17 @@ public class ItemsDAOImplTest {
 
     @Test
     public void getItems() {
-        ItemsDAO itemsDAO=new ItemsDAOImpl();
-        List<Items> list=itemsDAO.getItems("C语言");
-        for(Items items:list)
-            System.out.println(items);
 
+        ItemsDAO itemsDAO=new ItemsDAOImpl();
+        List<Items> list=itemsDAO.getItems("C");
+        System.out.println(list.get(0));
+    }
+
+    @Test
+    public void getitem() {
+        ItemsDAO itemsDAO=new ItemsDAOImpl();
+        int cl=2;
+        Items item=itemsDAO.getitem("C",cl);
+        System.out.println(item);
     }
 }

@@ -6,25 +6,28 @@ public class Items {
     private String answer;
     private String catagroy;   //类型
     private String itContent;  //问题
-    private String A;
-    private String B;
-    private String C;
-    private String D;
+    private String aKey;
+    private String bKey;
+    private String cKey;
+    private String dKey;
     private String analyse;  //解析
     private String knowledge;
     private  String itStatus;
 
     public String toString() {
         return "Items{" +
-                "answer='" + answer + '\'' +
+                "itId=" + itId +
+                ", aId=" + aId +
+                ", answer='" + answer + '\'' +
                 ", catagroy='" + catagroy + '\'' +
                 ", itContent='" + itContent + '\'' +
-                ", A='" + A + '\'' +
-                ", B='" + B + '\'' +
-                ", C='" + C + '\'' +
-                ", D='" + D + '\'' +
+                ", aKey='" + aKey + '\'' +
+                ", bKey='" + bKey + '\'' +
+                ", cKey='" + cKey + '\'' +
+                ", dKey='" + dKey + '\'' +
                 ", analyse='" + analyse + '\'' +
                 ", knowledge='" + knowledge + '\'' +
+                ", itStatus='" + itStatus + '\'' +
                 '}';
     }
 
@@ -68,36 +71,36 @@ public class Items {
         this.itContent = itContent;
     }
 
-    public String getA() {
-        return A;
+    public String getaKey() {
+        return aKey;
     }
 
-    public void setA(String a) {
-        A = a;
+    public void setaKey(String aKey) {
+        this.aKey = aKey;
     }
 
-    public String getB() {
-        return B;
+    public String getbKey() {
+        return bKey;
     }
 
-    public void setB(String b) {
-        B = b;
+    public void setbKey(String bKey) {
+        this.bKey = bKey;
     }
 
-    public String getC() {
-        return C;
+    public String getcKey() {
+        return cKey;
     }
 
-    public void setC(String c) {
-        C = c;
+    public void setcKey(String cKey) {
+        this.cKey = cKey;
     }
 
-    public String getD() {
-        return D;
+    public String getdKey() {
+        return dKey;
     }
 
-    public void setD(String d) {
-        D = d;
+    public void setdKey(String dKey) {
+        this.dKey = dKey;
     }
 
     public String getAnalyse() {

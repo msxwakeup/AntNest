@@ -12,6 +12,7 @@ $(document).ready(function() {
 	$(".refleshCheckCode").click(function(){
 		
 		$("#checkCode").attr("src","imageServlet?"+Math.random());
+		alert(1111)
 		
 		
 	});
