@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="index.jsp">首页</a><span></span></li>
                 <li><a href="video.jsp">视频课程</a><span></span></li>
-                <li><a href="resource.jsp">资料文档</a><span></span></li>
+                <li><a href="materialpage.do">资料文档</a><span></span></li>
                 <li><a href="#">在线评测</a><span></span></li>
                 <li><a href="#">悬赏榜</a></li>
             </ul>

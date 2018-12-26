@@ -36,7 +36,7 @@ public class pdfServlet extends HttpServlet {
 //        System.out.println(flink);
         //"C:/material/[数据结构(C语言版)].严蔚敏_吴伟民.扫描版.pdf";
 //服务端把response的header头中设置Access-Control-Allow-Origin为制定可请求当前域名下数据的域名
-        // response.setHeader("Access-Control-Allow-Origin", "*"); // 解决请求头跨域问题
+         response.setHeader("Access-Control-Allow-Origin", "*"); // 解决请求头跨域问题
 
         response.setContentType("application/pdf");
         //   filelink="C:/material/[数据结构(C语言版)].严蔚敏_吴伟民.扫描版.pdf";

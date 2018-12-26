@@ -322,15 +322,16 @@ div.search {padding: 30px 0;}
     border: 1px solid #4CAF50;
 }
 
+
 /*resource_content部分的css样式*/
 .resource{
-    width: 1200px;
-    height: auto;
+    width: 80%;
+    height: 100%;
     margin: 20px auto;
 }
 .resource_top{
     width: 100%;
-    height: 240px;
+    height: 10%;
     color:oldlace;
     font-family: verdana;
     font-size: 20px;
@@ -339,119 +340,160 @@ div.search {padding: 30px 0;}
 }
 .resource_nav{
     width: 100%;
-    height: 200px;
-    background-color: #0069D9;
-    margin-top: 20px;
+    height: 5%;
+    background-color: #eee7ee;
+    margin-top: 5px;
+}
+.resource_nav input {
+    width: 30%;
+    height: 100%;
+
+    border: 2px solid #6e6e6e;
+
+    background:#EEEEEE;
+    color: #9E9C9C;}
+.resource_nav button {
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 80px;
+    border: 2px solid #6e6e6e;
+    font-family: "宋体";
+    font-weight: bold;
+    font-size: 14px;
+    color: #6e6e6e;
+
+    background: #faebf6;
+
+    clear: both;}
+.resource_all{
+    width: 100%;
+    height:80% ;
+    margin-top: 10px;
+}
+.resource_foot{
+    width: 100%;
+    height:5% ;
+    margin-top: 10px;
 }
 .resource_content{
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    border: 1px solid #e4e4e4;
+    width: 20%;
+    height: 100%;
+
+    float: left;
+
+    background-color: white;
+}
+.resource_show{
+    width: 80%;
+    height: 100%;
+
+    float: left;
+
     background-color: white;
 }
 .resource_item{
-    height: 40px;
-    margin:16px 30px 0px 30px;
+    height: 10%;
+    margin:0px 5px 0px 5px;
     border-bottom:1px lightgray solid;
 }
 .resource_item a{
     text-decoration: none;
     font-family: '微软雅黑';
-    font-size: 16px;
+    font-size: 12px;
     color:grey;
 }
 .resource span{
     font-family: '微软雅黑';
-    font-size: 16px;
+    font-size: 12px;
     color:grey;
 }
 .item_file{
-    height: 40px;
-    width: 700px;
+    height: 100%;
+    width: 60%;
     line-height: 40px;
     float: left;
-    margin-right: 100px;
+    margin-right: 0px;
 }
 .page_view,.update_date{
     height: 40px;
-    width: 160px;
+    width: 20%;
     line-height: 40px;
     float: left;
 }
 .resource_list{
     width: 100%;
-    height: auto;
+    height: 80%;
 }
+/*.resource_list ul{*/
+/*list-style: none;*/
+/*width: 1150px;*/
+/*margin: 0 auto;*/
+/*padding:0px;*/
+/*}*/
 .resource_list ul{
-    list-style: none;
-    width: 1150px;
-    margin: 0 auto;
-    padding:0px;
+    width: 100%;
+    height: 80%;
+    list-style-type: none;
 }
-.list_box{
-    height: 100px;
-    border-bottom:1px lightgray dotted ;
+.resource_list ul li{
+    width: 100%;
+    height: 20%;
+}
+.resource_box{
+    width: 100%;
+    height: 20%;
+    margin-top: 10px;
 }
 
 .pdf_img{
-    height: 100px;
-    width: 100px;
+    height: 30px;
+    width: 10%;
     float: left;
-    text-align: center;
+    margin-top: 20px;
 }
 .pdf_img img{
-    margin-top: 15px;
-    height: 70px;
-    width: 70px;
+    height: 30px;
+    width: 100%;
 }
 .file_title{
     height: 50px;
-    width: 600px;
+    width: 50%;
     float: left;
     margin-top: 20px;
-    margin-right: 100px;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+    text-align: left;
 }
 .file_title a{
     text-decoration: none;
     color: #000000;
     font-family:verdana;
-    font-size: 20px;
+    font-size: 12px;
 }
 .file_title a:hover{
     text-decoration: underline;
 }
 .page_view_num,.update_date_num{
-    height: 60px;
-    width: 160px;
+    height: 30px;
+    width: 20%;
     float: left;
     margin-top: 20px;
 }
-.list_box span{
-    margin-left: 13px;
-}
+
 .pagination1 {
     width: 100%;
-    height: 70px;
+    height: 10%;
     text-align: center;
     padding-top: 20px;
 }
-.pagination1 ul li{
-    display: inline;
-    margin-top: 20px;
+
+.pagination1  a {
+
+    font-size: 12px;
 }
-.pagination1 ul li a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-    font-size: 20px;
-}
+
 
 /*修改基本信息的css样式*/
 .setting{

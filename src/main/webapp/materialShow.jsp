@@ -106,19 +106,19 @@
 </iframe>
 </div>
 <script >
-$(document).ready(function() {
+    $(document).ready(function() {
 
 
-    //$("li:eq(1) ").css("background-color","#B2E0FF");
+        //$("li:eq(1) ").css("background-color","#B2E0FF");
 
-    //alert( $("li:eq(1) a").attr("materiallink"));
+        //alert( $("li:eq(1) a").attr("materiallink"));
 
-$.get("<%=basePath%>setLink.do",{mlink:$("#booklist li:eq(0) a").attr("materialLink")} ,function(result){
+        $.get("<%=basePath%>setLink.do",{mlink:$("#booklist li:eq(0) a").attr("materialLink")} ,function(result){
 //alert(result);
-});
+        });
 
-$("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
-});
+        $("#myframe").attr("src","http://localhost:8080/pdf/web/viewer.html?file=<%=basePath%>pdfStreamHandeler.do?"+Math.random());
+    });
 </script>
 </body>
 </html>

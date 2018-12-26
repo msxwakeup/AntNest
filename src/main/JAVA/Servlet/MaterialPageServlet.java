@@ -50,8 +50,9 @@ public class MaterialPageServlet extends HttpServlet {
         pageBean.setPageList(list);
         request.setAttribute("key",key);
         request.setAttribute("pagebean",pageBean);
-        request.getRequestDispatcher("materialShow.jsp").forward(request,response);
+        //request.getRequestDispatcher("materialShow.jsp").forward(request,response);
 
+        request.getRequestDispatcher("resource.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
