@@ -96,23 +96,27 @@ public class MaterialDAOImpl implements IMaterialDAO {
     }
 
     @Override
-    public List<Material> getSeries(String knowledge) throws SQLException {
+    public List<Material> getSeries(String knowledge,int start,int size) throws SQLException {
         List<Material> materialList=new ArrayList<Material>();
         Connection conn=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try {
             conn=JDBCUtil.getConn();
-            String sql="select name,knowledge,link FROM material where knowledge like ? ";
+            String sql="select m_id, m_name,knowledge,link\n" +
+                    " FROM material where knowledge like ?  limit ?,?";
             ps=conn.prepareStatement(sql);
             ps.setString(1,"%"+knowledge+"%");
+            ps.setInt(2,start);
+            ps.setInt(3,size);
             rs=ps.executeQuery();
             while (rs.next())
             {
                 Material material=new Material();
-                material.setName(rs.getString(1));
-                material.setKnowledge(rs.getString(2));
-                material.setLink(rs.getString(3));
+                material.setM_id(rs.getInt(1));
+                material.setName(rs.getString(2));
+                material.setKnowledge(rs.getString(3));
+                material.setLink(rs.getString(4));
                 materialList.add(material);
             }
             return materialList;

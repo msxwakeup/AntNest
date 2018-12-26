@@ -180,12 +180,11 @@
 
         }
 </style>
-    <script type="text/javascript">
-        function chgpic() {
-            var img = document.getElementById("checkDigit");
-            img.src = "imageServlet";			}
-    </script>
-
+    <%--<script type="text/javascript">
+       function chgpic() {
+            document.getElementById("checkCode").src="imageServlet";
+                       }
+   </script>--%>
 </head>
 
 <body>
@@ -220,9 +219,10 @@
 
             验证码：
             <input type="text" name="checkDigit" id="checkDigit" />
-            <img id="checkCode" class="refleshCheckCode" alt="点击更换验证码" src="imageServlet">
+            <img src="imageServlet" id="checkCode" class="refleshCheckCode"
+                 alt="点击更换验证码" onclick="this.src='imageServlet?'+Math.random();" >
 
-            <a href="#" onmouseover="chgpic()" >看不清？换一张</a>
+
             <div id="checkDigitIsError" style="display: none;" >验证码错误！</div>
 
 

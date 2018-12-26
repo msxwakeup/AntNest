@@ -12,7 +12,7 @@ public interface IMaterialDAO {
     public Material getMaterials(int id)throws SQLException;
     public boolean uploadMaterial(Material material)throws SQLException;
     //按知识点查询显示系列
-    public List<Material> getSeries(String knowledge)throws SQLException;
+    public List<Material> getSeries(String knowledge,int start,int size)throws SQLException;
     //按类型显示系列
     //public List<Material> getshow(int id )throws SQLException;
     public  List<Material> getshow(String name,int start,int size)throws SQLException;
