@@ -36,15 +36,12 @@ public class FinishitemServlet extends HttpServlet {
 
         Integer fintime= (Integer) session.getAttribute("finishtime");
 
-        System.out.println(fintime);
-
         int memid=2;
         String anwser=req.getParameter("anwser");
         String id=req.getParameter("itid");
         String catagroy=req.getParameter("catagroy");
         Integer itid=Integer.parseInt(id);
         int finishtime=finishitemDAO.getfinishtimes(memid,catagroy);
-        System.out.println("finishtime为  "+finishtime);
 
         if(fintime==null){
             finishtime=finishtime+1;
@@ -55,25 +52,33 @@ public class FinishitemServlet extends HttpServlet {
             finishitem.setItcatagroy(catagroy);
             finishitem.setFinishtimes(finishtime);
             finishitem.setYanswer(anwser);
-
-            System.out.println(finishtime);
             session.setAttribute("finishtime",finishtime);
             finishitemDAO.yetfinitem(finishitem);
         }
         if(fintime!=null) {
-            System.out.println("fintime!=null");
             int num=finishitemDAO.getnowfiidnum(memid,finishtime,catagroy);
-            int fiidnum=num+1;
+            String oldanswer=finishitemDAO.getanwserUseritid(memid,itid,finishtime);
+
             Finishitem finishitem=new Finishitem();
             finishitem.setMemId(memid);
             finishitem.setItId(itid);
-            finishitem.setFiIdnum(fiidnum);
             finishitem.setItcatagroy(catagroy);
             finishitem.setFinishtimes(finishtime);
             finishitem.setYanswer(anwser);
-            boolean flag=false;
-            flag=finishitemDAO.yetfinitem(finishitem);
-            System.out.println(flag);
+
+            if(oldanswer==null){
+                int fiidnum=num+1;
+                finishitem.setFiIdnum(fiidnum);
+                boolean flag=false;
+                flag=finishitemDAO.yetfinitem(finishitem);
+            }else if(oldanswer!=null){
+                finishitem.setFiIdnum(num);
+                finishitemDAO.updatefinishitem(finishitem);
+            }
+
+
+
+
 
         }
 

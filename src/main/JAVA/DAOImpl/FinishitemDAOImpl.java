@@ -113,6 +113,55 @@ public class FinishitemDAOImpl implements IFinishitemDAO {
         return 0;
     }
 
+    public boolean updatefinishitem(Finishitem finishitem) {
+        String sql="UPDATE  finishitem set Yanswer=? where mem_id=? and it_id=? and finishtimes=?";
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        boolean flag=false;
+        try {
+            conn=JDBCUtil.getConn();
+            ps=conn.prepareStatement(sql);
+            ps.setString(1,finishitem.getYanswer());
+            ps.setInt(2,finishitem.getMemId());
+            ps.setInt(3,finishitem.getItId());
+            ps.setInt(4,finishitem.getFinishtimes());
+            int intflag=ps.executeUpdate();
+            if(intflag==1){
+                flag=true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtil.close(conn,ps,rs);
+        }
+        return flag;
+    }
+
+    public String getanwserUseritid(int memid, int itid, int finishtimes) {
+        String sql="SELECT Yanswer from finishitem where mem_id=?  and it_id=? and finishtimes=?";
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try {
+            conn=JDBCUtil.getConn();
+            ps=conn.prepareStatement(sql);
+            ps.setInt(1,memid);
+            ps.setInt(2,itid);
+            ps.setInt(3,finishtimes);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                String answer=rs.getString(1);
+                return answer;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtil.close(conn,ps,rs);
+        }
+
+        return null;
+    }
 
 
 }

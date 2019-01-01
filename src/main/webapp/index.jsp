@@ -34,103 +34,21 @@
         视频课程
     </div>
     <div class="video_content">
+        <c:forEach items="${videolist}" var="videos">
         <div class="video">
             <div class="image">
-                <a href="#">
-                    <img src="img/1200-576.jpg" style="display:block" />
+                <a href="showvideo?vid=${videos.vId}">
+                    <img src="${videos.videoimg}" style="display:block" />
                 </a>
             </div>
             <div class="video_title">
-                <a href="#">
-                    这是视频的标题1
+                <a href="showvideo?vid=${videos.vId}">
+                        ${videos.videoName}
                 </a>
             </div>
-        </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/wtg.jpg" />
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题2
-                </a>
-            </div>
-        </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/zt4.0.jpg">
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题3
-                </a>
-            </div>
-        </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/fbxzt.jpg">
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题4
-                </a>
-            </div>
-        </div>
 
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/1200-576.jpg" style="display:block" />
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题5
-                </a>
-            </div>
         </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/wtg.jpg" />
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题6
-                </a>
-            </div>
-        </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/zt4.0.jpg">
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题7
-                </a>
-            </div>
-        </div>
-        <div class="video">
-            <div class="image">
-                <a href="#">
-                    <img src="img/fbxzt.jpg">
-                </a>
-            </div>
-            <div class="video_title">
-                <a href="#">
-                    这是视频的标题8
-                </a>
-            </div>
-        </div>
+        </c:forEach>
     </div>
 
 </div>

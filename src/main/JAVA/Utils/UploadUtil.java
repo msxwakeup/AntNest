@@ -28,7 +28,7 @@ public class UploadUtil {
 		basepath = servletContext.getRealPath("/");
 		basepath = basepath.endsWith("/") ? basepath : basepath + "/";
 
-		System.out.println("basePath=" + basepath);
+
 		File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
 		factory.setRepository(repository);
 

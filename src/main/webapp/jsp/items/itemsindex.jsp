@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,6 +8,10 @@
 <%@ page isELIgnored="false"%>
 <html>
 <head>
+    <link type="text/css"  href="css/ants.css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/JS.js"></script>
     <title>Title</title>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/jquery.min.js"></script>
@@ -21,36 +26,32 @@
     *{
         margin: 0 auto;
         padding: 0px;
-
-    }
-    #head{
-        width: 100%;
-        height: 80px;
-        background-color: #6C8CBD;
     }
     #wrap{
-        width: 1050px;
-        margin: 0 auto;
-        height: 540px;
-        position: relative;
+        width: 100%;
+        height: 560px;
+        background: #F3F5F6;
     }
-
     #wrapcenter{
-        float: left;
+        margin: 20px 350px;
         width: 850px;
-        height: 540px;
-        background: #E9F2BC;
-
+        height: 520px;
+        background: #FFFFFF;
     }
     #wrapcenter .search{
-        margin: 0 auto;
-        width: 600px;
-        height: 50px;
-        background: #E2C8C8;
+        margin: 0 750px;
+        width: 30px;
+        height: 10px;
 
     }
+    .submit{
+        background-color: #ee7700;
+        border: none;
+        color: white;
+        font-size: 16px;
+    }
     #wrapcenter .content{
-        margin: 25px auto 0px;
+        margin: 0px auto 0px;
         width: 750px;
         height: 80px;
 
@@ -64,13 +65,12 @@
         margin: 5px auto;
         width: 700px;
         height: 30px;
-        background: ;
+
     }
     #wrapcenter .select{
         margin: 5px auto;
         width: 700px;
         height: 20px;
-        background: #881012;
     }
     #wrapcenter .operate{
         letter-spacing: 5px;
@@ -98,27 +98,25 @@
         height: 50px;
 
     }
-    #wrapright{
-        float: left;
-        width: 200px;
-        height: 500px;
-        background: #319827;
-
-    }
     #foot{
         width: 100%;
         height: 100px;
-        background: #D16668;
+        background: #FFFFFF;
     }
 </style>
 </head>
 <body>
-<div id="head"></div>
+<%@include file="/index_header.jsp" %>
 <div id="wrap">
     <div id="wrapcenter">
-        <div class="search">搜索</div>
-        <input value="${item.catagroy}" hidden="hidden" id="catagory">
+        <div class="search">
+            <form method="post" action="/AntNest/endtest">
+                <input value="结束测验" type="submit" class="submit">
+            </form>
+        </div>
+        <input value="${item.catagroy}" hidden="hidden" id="catagory" >
         <input value="${item.itId}" hidden="hidden" id="itid">
+
         <div class="content">
             <p>${item.itContent}</p>
         </div>
@@ -147,7 +145,7 @@
             <a href="javascript:void(0);" onClick="showanalyse()">查看解析</a>
             <a href="/AntNest/selectitems.do?catagory=${item.catagroy}&topic=-1"> 上一题</a>
             <a href="javascript:void(0);">收藏题目</a>
-            <a href="/AntNest/selectitems.do?catagory=${item.catagroy}&topic=1">下一题</a>
+            <a href="/AntNest/selectitems.do?catagory=${item.catagroy}&topic=1" >下一题</a>
         </div>
         <div id="analyse">
             <div id="anwsererror" class="analyse1" hidden=""><font  size="+1" color="#9F0E10">你答错了</font></div> <div id="anwserright" class="analyse1" hidden=""><font size="+1" color="#16BB0B">你答对了</font></div>
@@ -156,8 +154,7 @@
         </div>
 
     </div>
-    <div id="wrapright">1111111111</div>
-</div>
-<div id="foot"></div>
+
+<div id="foot"><input value="${theanswer}" id="theanswer" hidden> </div></div>
 </body>
 </html>
