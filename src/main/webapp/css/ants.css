@@ -325,13 +325,12 @@ div.search {padding: 30px 0;}
 
 /*resource_content部分的css样式*/
 .resource{
-    width: 80%;
-    height: 100%;
-    margin: 20px auto;
+    width: 1200px;
+    margin: 0 auto;
 }
 .resource_top{
-    width: 100%;
-    height: 10%;
+    width: 1200px;
+    height: 60px;
     color:oldlace;
     font-family: verdana;
     font-size: 20px;
@@ -339,91 +338,83 @@ div.search {padding: 30px 0;}
     background-repeat:no-repeat;
 }
 .resource_nav{
-    width: 100%;
-    height: 5%;
+    width: 1200px;
+    height: 50px;
     background-color: #eee7ee;
     margin-top: 5px;
 }
 .resource_nav input[type="text"] {
-    width: 30%;
-    height: 100%;
-
+    width: 400px;
+    height: 50px;
     border: 2px solid #6e6e6e;
-
     background:#EEEEEE;
     color: #9E9C9C;}
 .resource_nav button {
     top: 0px;
     right: 0px;
-    height: 100%;
+    height: 50px;
     width: 80px;
     border: 2px solid #6e6e6e;
     font-family: "宋体";
     font-weight: bold;
     font-size: 14px;
     color: #6e6e6e;
-
     background: #faebf6;
-
     clear: both;}
 .resource_all{
-    width: 100%;
-    height:80% ;
+    width: 1200px;
+    height:800px;
     margin-top: 10px;
 }
 .resource_foot{
-    width: 100%;
-    height:5% ;
+    height:20px ;
     margin-top: 10px;
 }
 .resource_content{
-    width: 20%;
-    height: 100%;
-
+    width:450px;
+    height:800px;
     float: left;
-
     background-color: white;
 }
 .resource_show{
-    width: 80%;
-    height: 100%;
-
+    width: 750px;
+    height:800px;
     float: left;
-
-    background-color: white;
+    background-color:white;
 }
 .resource_item{
-    height: 10%;
-    margin:0px 5px 0px 5px;
+    height:40px;
+    width: 450px;
+    margin:0px ;
     border-bottom:1px lightgray solid;
 }
 .resource_item a{
     text-decoration: none;
     font-family: '微软雅黑';
-    font-size: 12px;
+    font-size: 20px;
     color:grey;
 }
 .resource span{
     font-family: '微软雅黑';
-    font-size: 12px;
+    font-size: 20px;
     color:grey;
 }
 .item_file{
-    height: 100%;
-    width: 60%;
+    height: 40px;
+    width: 290px;
     line-height: 40px;
     float: left;
-    margin-right: 0px;
+    /*margin-right: 0px;*/
 }
 .page_view,.update_date{
     height: 40px;
-    width: 20%;
+    width: 80px;
     line-height: 40px;
     float: left;
 }
 .resource_list{
-    width: 100%;
-    height: 80%;
+    width: 450px;
+    height: 700px;
 }
 /*.resource_list ul{*/
 /*list-style: none;*/
@@ -432,35 +423,35 @@ div.search {padding: 30px 0;}
 /*padding:0px;*/
 /*}*/
 .resource_list ul{
-    width: 100%;
-    height: 80%;
+    width: 450px;
+    height: 700px;
     list-style-type: none;
 }
 .resource_list ul li{
-    width: 100%;
-    height: 20%;
+    width: 450px;
+    height: 100px;
 }
-.resource_box{
-    width: 100%;
-    height: 20%;
-    margin-top: 10px;
-}
+/*.resource_box{*/
+    /*width: 100%;*/
+    /*height: 20%;*/
+    /*margin-top: 10px;*/
+/*}*/
 
 .pdf_img{
-    height: 30px;
-    width: 10%;
+    height: 80px;
+    width: 70px;
     float: left;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 .pdf_img img{
-    height: 30px;
-    width: 100%;
+    height: 80px;
+    width: 70px;
 }
 .file_title{
-    height: 50px;
-    width: 50%;
+    height: 80px;
+    width: 220px;
     float: left;
-    margin-top: 20px;
+    padding-top: 20px;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
@@ -470,28 +461,28 @@ div.search {padding: 30px 0;}
     text-decoration: none;
     color: #000000;
     font-family:verdana;
-    font-size: 12px;
+    font-size: 20px;
 }
 .file_title a:hover{
     text-decoration: underline;
 }
 .page_view_num,.update_date_num{
-    height: 30px;
-    width: 20%;
+    height: 80px;
+    width: 80px;
     float: left;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .pagination1 {
-    width: 100%;
-    height: 10%;
+    width: 450px;
+    height: 50px;
     text-align: center;
     padding-top: 20px;
 }
 
 .pagination1  a {
 
-    font-size: 12px;
+    font-size: 20px;
 }
 
 

@@ -60,7 +60,7 @@ public class MaterialPageServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            pageBean.setPagesize(6);
+            pageBean.setPagesize(4);
             pageBean.setTotalRows(totalRows);
             pageBean.setCurrentPage(cpage);
             try {

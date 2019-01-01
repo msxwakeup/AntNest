@@ -73,7 +73,7 @@
     </div>
     <div class="resource_all">
         <div class="resource_show">
-            <iframe id="showframe" name="showframe" width="90%" height="100%" >
+            <iframe id="showframe" name="showframe" width="750" height="800" >
 
                 <%--src="<c:url value="pdf/web/viewer.html" />?file=<c:url value="/helloworld.pdf"/>">--%>
 
@@ -103,10 +103,10 @@
                         <a class="lookfor"  materialLink="${material.link}"   href="javaScript:;"    target="myframe" >${material.name}</a>
                     </div>
                     <div class="page_view_num">
-                        20
+
                     </div>
                     <div class="update_date_num">
-                        2018-12-11
+
                     </div>
                 </li>
               </c:forEach>
