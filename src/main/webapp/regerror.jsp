@@ -18,6 +18,6 @@
     <title>Title</title>
 </head>
 <body>
-${regname},用户注册失败！2秒后自动跳转到登录页面，如果无法跳转，请单击<a href="registe.jsp">注册</a></div>
+${regname},用户注册失败！2秒后自动跳转到注册页面，如果无法跳转，请单击<a href="registe.jsp">注册</a>
 </body>
 </html>
