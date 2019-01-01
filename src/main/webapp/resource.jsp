@@ -65,6 +65,8 @@
     <div class="resource_nav">
         <form action="materialpage.do" method="get">
             <input type="text" id="str" name="names"  value="${key}" >
+            <%--<input type="radio" name="choose" value="filename" <c:if test="${dict}=='filename'">checked</c:if> >文件名--%>
+            <%--<input type="radio" name="choose" value="fnowledge" <c:if test="${dict}=='fnowledge'">checked</c:if> >知识点--%>
             <button type="submit">搜索</button>
         </form>
 

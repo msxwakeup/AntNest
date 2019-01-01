@@ -344,7 +344,7 @@ div.search {padding: 30px 0;}
     background-color: #eee7ee;
     margin-top: 5px;
 }
-.resource_nav input {
+.resource_nav input[type="text"] {
     width: 30%;
     height: 100%;
 
