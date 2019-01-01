@@ -11,12 +11,14 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page isELIgnored="false"%>
+<meta http-equiv="refresh" content="2;url=<%=basePath%>login.jsp"/>
 <html>
 <head>
     <base href="<%=basePath%>"/>
     <title>Title</title>
 </head>
 <body>
-${regname},用户注册成功！
+${regname},用户注册成功！2秒后自动跳转到登录页面，如果无法跳转，请单击<a href="login.jsp">登录界面</a>
 </body>
 </html>

@@ -11,6 +11,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<meta http-equiv="refresh" content="2;url=<%=basePath%>registe.jsp"/>
 <html>
 <head>
     <base href="<%=basePath%>"/>
